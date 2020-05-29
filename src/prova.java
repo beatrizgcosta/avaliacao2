@@ -10,14 +10,16 @@ public class prova {
 		Scanner sc = new Scanner(System.in);
 		
 		String nome;
-		int horastrabalhadas, menu;
-		double valorhoras;
+		int horastrabalhadas, menu, totalhoras;
+		double valorhoras, custo, custototal;
 		char novo;
 		
 		novo = 's';
 		horastrabalhadas = -1;
 		valorhoras = -1;
 		menu = 1;
+		totalhoras = 0;
+		custototal = 0;
 		
 		
 		while(novo == 'S' || novo == 's') {
@@ -29,12 +31,16 @@ public class prova {
 				System.out.printf("Horas trabalhadas: ");
 				horastrabalhadas = sc.nextInt();
 			}
+			totalhoras = totalhoras + horastrabalhadas;
 			while(valorhoras < 0) {
 				System.out.printf("Valor por hora: ");
 				valorhoras = sc.nextDouble();
 			}
+			custo = horastrabalhadas * valorhoras;
+			custototal = custototal + custo;
 			System.out.printf("Digitar outro (S/N)? ");
 			novo = sc.next().charAt(0);
+			
 		}
 		
 		while(menu != 4) {
@@ -46,6 +52,16 @@ public class prova {
 			System.out.println("4 - Sair ");
 			System.out.printf("Digite uma opção: ");
 			menu = sc.nextInt();
+			
+			if(menu == 1) {
+				System.out.println();
+				System.out.printf("Total de horas = %d%n", totalhoras);
+			} else {
+				if(menu == 2) {
+					System.out.println();
+					System.out.printf("Total de horas = %.2f%n", custototal);
+				}
+			}
 		}
 	}
 
