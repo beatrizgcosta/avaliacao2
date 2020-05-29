@@ -9,9 +9,9 @@ public class prova {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		String nome;
+		String nome, nomeganhoumais;
 		int horastrabalhadas, menu, totalhoras;
-		double valorhoras, custo, custototal;
+		double valorhoras, custo, custototal, ultimocusto;
 		char novo;
 		
 		novo = 's';
@@ -20,6 +20,8 @@ public class prova {
 		menu = 1;
 		totalhoras = 0;
 		custototal = 0;
+		ultimocusto = 0;
+		nomeganhoumais = "nome";
 		
 		
 		while(novo == 'S' || novo == 's') {
@@ -38,6 +40,10 @@ public class prova {
 			}
 			custo = horastrabalhadas * valorhoras;
 			custototal = custototal + custo;
+			if(custo > ultimocusto) {
+				nomeganhoumais = nome;
+			}
+			ultimocusto = custo;
 			System.out.printf("Digitar outro (S/N)? ");
 			novo = sc.next().charAt(0);
 			
@@ -60,6 +66,11 @@ public class prova {
 				if(menu == 2) {
 					System.out.println();
 					System.out.printf("Total de horas = %.2f%n", custototal);
+				}else {
+					if(menu == 3) {
+						System.out.println();
+						System.out.printf("Pessoa que ganhou mais: %s%n", nomeganhoumais);
+					}
 				}
 			}
 		}
