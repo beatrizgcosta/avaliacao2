@@ -10,13 +10,14 @@ public class prova {
 		Scanner sc = new Scanner(System.in);
 		
 		String nome;
-		int horastrabalhadas;
+		int horastrabalhadas, menu;
 		double valorhoras;
 		char novo;
 		
 		novo = 's';
 		horastrabalhadas = -1;
 		valorhoras = -1;
+		menu = 1;
 		
 		
 		while(novo == 'S' || novo == 's') {
@@ -36,6 +37,16 @@ public class prova {
 			novo = sc.next().charAt(0);
 		}
 		
+		while(menu != 4) {
+			System.out.println();
+			System.out.printf("MENU%n");
+			System.out.println("1 - Total de horas trabalhadas");
+			System.out.println("2 - Custo total");
+			System.out.println("3 - Nome da pessoa que ganhou mais ");
+			System.out.println("4 - Sair ");
+			System.out.printf("Digite uma opção: ");
+			menu = sc.nextInt();
+		}
 	}
 
 }
