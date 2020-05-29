@@ -65,11 +65,16 @@ public class prova {
 			} else {
 				if(menu == 2) {
 					System.out.println();
-					System.out.printf("Total de horas = %.2f%n", custototal);
+					System.out.printf("Custo de horas = R$ %.2f%n", custototal);
 				}else {
 					if(menu == 3) {
 						System.out.println();
 						System.out.printf("Pessoa que ganhou mais: %s%n", nomeganhoumais);
+					}else {
+						if(menu == 4) {
+							System.out.println();
+							System.out.printf("FIM DO PROGRAMA!");
+						}
 					}
 				}
 			}
