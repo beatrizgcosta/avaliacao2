@@ -65,7 +65,7 @@ public class prova {
 			} else {
 				if(menu == 2) {
 					System.out.println();
-					System.out.printf("Custo de horas = R$ %.2f%n", custototal);
+					System.out.printf("Custo total = R$ %.2f%n", custototal);
 				}else {
 					if(menu == 3) {
 						System.out.println();
